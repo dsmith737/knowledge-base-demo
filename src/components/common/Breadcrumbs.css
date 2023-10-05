@@ -1,0 +1,21 @@
+.Breadcrumbs {
+	&-list-enter {
+		overflow-y: hidden;
+	}
+
+	&-list-exit-active,
+	&-list-enter-active {
+		overflow-y: hidden;
+		transition: height 0.2s ease;
+	}
+
+	&-toggle {
+		transition: rotate 0.8s ease, color 0.2s ease;
+
+		&.is-expanded {
+		 rotate: 180deg;
+		 color: white;
+		 background-color: black;
+		}
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"$id": "CardCreationUpdatePlugin",
+	"$schema": "https://schema.yext.com/config/platform/plugin/v1",
+	"globals": {
+		"API_KEY": "0d1b88529e46dd26a9bca3f4390e8861"
+	}
+}

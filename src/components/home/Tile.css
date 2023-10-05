@@ -1,0 +1,118 @@
+.Tile {
+	display: grid;
+	grid-template-rows: 1fr auto;
+	grid-template-columns: auto 1fr auto;
+	align-items: center;
+	justify-items: start;
+	grid-template-areas:
+		"left title info right";
+
+	&-left {
+		grid-area: left;
+	}
+	&-title {
+		grid-area: title;
+	}
+	&-info {
+		grid-area: info;
+	}
+	&-right {
+		grid-area: right;
+	}
+
+	&-arrow {
+		transition: left 0.3s ease;
+		left: 0;
+	}
+
+	&:hover {
+		.Tile-arrow {
+			left: 4px;
+		}
+	}
+
+	&-info {
+		@screen lg {
+			margin-right: theme('spacing.12')
+		}
+	}
+	
+	&-left {
+		margin-right: theme('spacing.3');
+		margin-top: theme('spacing.1');
+
+		@screen lg {
+			margin-right: theme('spacing.4')
+		}
+	}
+
+	&-snippet {
+		margin-top: theme('spacing.3');
+	}
+
+	&-updated {
+		display: flex;
+		align-items: center;
+
+		@apply text-xs;
+
+		@screen lg {
+			flex-direction: column;
+			align-items: start;
+
+			@apply text-base;
+		}
+	}
+
+	&-boardFolder {
+		@apply text-base text-brand-gray-700;
+	}
+
+	&-update {
+		margin-top: theme('spacing.2');
+
+		@screen lg {
+			margin-top: theme('spacing.3');
+		}
+	}
+}
+
+.Tile.Tile--compact {
+	grid-template-areas:
+		"left title info"
+		"_ right right";
+
+	.Tile-info {
+		margin-right: 0;
+		display: none;
+	}
+
+	.Tile-snippet {
+		display: none;
+	}
+
+	.Tile-left {
+		margin-right: theme('spacing.3');
+	}
+
+	.Tile-update {
+		margin-top: theme('spacing.3');
+	}
+
+	.Tile-updated {
+		margin-top: theme('spacing.2');
+		flex-direction: row;
+
+		@apply text-xs;
+	}
+}
+
+.Tile.Tile--boardView.Tile--compact {
+	grid-template-areas:
+		"left title right"
+		"_ info right";
+
+	.Tile-boardFolder {
+		@apply text-xs text-brand-gray-500;
+	}
+}

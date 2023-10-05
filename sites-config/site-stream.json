@@ -1,0 +1,15 @@
+{
+  "filter": {
+    "entityIds": ["board-Benefits"]
+  },
+  "fields": [
+    "id",
+    "uid",
+    "meta",
+    "name"
+  ],
+  "localization": {
+    "locales": ["en"],
+    "primary": false
+  }
+}

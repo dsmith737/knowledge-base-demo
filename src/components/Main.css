@@ -1,0 +1,14 @@
+.Main {
+  display: grid;
+  height: 100%;
+  grid-template-rows: auto 1fr auto;
+  right: 0;
+  position: relative;
+  transition: right 0.2s linear;
+}
+
+.Main.is-offset {
+	@media (max-width: theme('screens.lg')) {
+		right: 100vw;
+	}
+}

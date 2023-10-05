@@ -1,0 +1,57 @@
+html {
+	--split-percentage: .5;
+}
+
+.SplitLayout {
+	--container-width: theme('screens.sm');
+
+	display: grid;
+	grid-template-columns: 0 1fr 0;
+
+	@screen sm {
+		--container-width: theme('screens.sm');
+	}
+
+	@screen md {
+		--container-width: theme('screens.md');
+	}
+
+	@screen lg {
+		--container-width: theme('screens.lg');
+		grid-template-columns: 1fr var(--container-width) 1fr;
+	}
+
+	@screen xl {
+		--container-width: theme('screens.xl');
+	}
+
+	@screen 2xl {
+		--container-width: theme('screens.2xl');
+	}
+
+	&-left,
+	&-right {
+		display: flex;
+	}
+
+	&-left {
+		justify-content: flex-end;
+	}
+
+	&-right {
+		justify-content: flex-start;
+	}
+
+	&-content { 
+		display: grid;
+		grid-template-columns: minmax(0, calc(var(--split-percentage) * 100%)) calc((1 - var(--split-percentage)) * 100%);
+		width: 100%;
+		transition: grid-template-columns 0.2s linear;
+	}
+
+	&-leftContent,
+	&-rightContent {
+		height: 100%;
+		overflow-x: clip;
+	}
+}

@@ -1,0 +1,34 @@
+@import "src/styles/Heading.css";
+@import "src/styles/Link.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: theme(fontFamily.primary);
+  color: theme(colors.brand-gray.700);
+  @apply text-base;
+}
+
+#reactele {
+  height: 100%;
+}
+
+/* Component Override */
+ .SearchBar-container > div {
+  border-radius: 6px;
+
+  & > div:first-child {
+    height: 100%;
+  }
+}

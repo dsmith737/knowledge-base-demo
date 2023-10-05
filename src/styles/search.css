@@ -1,0 +1,46 @@
+/* TODO(bhaines): I know this is bad, I'll refactor it at some point so they use a shared component and fix this file */
+.Index,
+.Search {
+	&-layout {
+		--split-percentage: 1;
+	}
+
+	&-layout.is-open {
+		@screen lg {
+			--split-percentage: 0.25;
+		}
+	}
+
+	&-results-exit-done {
+		display: none;
+	}
+
+	@media (max-width: theme('screens.lg')) {
+		&-cardPanel {
+			position: fixed;
+			top: 0;
+			right: -100vw;
+			width: 100vw;
+		}
+
+		&-panel-enter,
+		&-panel-exit-done {
+			right: -100vw;
+		}
+
+		&-panel-enter-active {
+			transition: right 0.2s linear;
+			right: 0;
+		}
+
+		&-panel-exit,
+		&-panel-enter-done {
+			right: 0;
+		}
+
+		&-panel-exit-active {
+			transition: right 0.2s linear;
+			right: -100vw;
+		}
+	}
+}

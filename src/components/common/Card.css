@@ -1,0 +1,43 @@
+.Card {
+	top: 0;
+	display: grid;
+	grid-template-rows: auto auto 1fr auto auto auto;
+	height: 100%;
+	max-height: 100vh;
+	
+	@screen lg {
+		grid-template-rows: auto auto 1fr auto;
+	}
+
+	&-row {
+		border-bottom: 2px solid theme(colors.brand-gray.400);
+
+		&:last-child {
+			border: none;
+		}
+	}
+
+	&-content {
+		display: grid;
+		gap: 40px;
+		grid-template-rows: 1fr;
+
+		@screen xl {
+			grid-template-columns: 3fr 1fr;
+		}
+	}
+
+	&-contentGrid {
+		display: grid;
+		grid-template-rows: 1fr auto;
+	}
+
+	/* Component override */
+	.Breadcrumbs-list {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.Breadcrumbs-item {
+		margin: 4px 0;
+	}
+}
